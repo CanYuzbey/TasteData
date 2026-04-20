@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python src/brain.py)",
+      "Bash(python -c ' *)",
+      "Bash(python tests/run_battery.py)"
+    ]
+  }
+}

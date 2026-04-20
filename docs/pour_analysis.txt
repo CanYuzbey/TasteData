@@ -1,0 +1,116 @@
++=========================================================================+
+| TASTEDATA - VIRTUAL POUR / EMA FLUIDITY ANALYSIS                       |
+|  Profile : Water -> Spicy Cola   Pour: 30s   Rate: 10 Hz   alpha: 0.2  |
++=========================================================================+
+
++-- Step 1 - Target Intensities at Spicy Cola (Stevens's Law, no EMA) -----+
+|  Dimension        Target   90% Thr  Notes
+|  Sourness         0.8688    0.7819  tracked
+|  Sweetness        0.4597    0.4137  tracked
+|  Spiciness        0.3817    0.3435  tracked
+|  Carbonation      0.7000    0.6300  tracked
+|
++-- Step 2 - Ramp Phase (sampled every 5s)   format: EMA / Raw ------------+
+|      t  pour%    Sourn e/r    Sweet e/r    Spici e/r    Carbo e/r
+|     0s     0%    0.000/0.000    0.000/0.000    0.000/0.000    0.000/0.000
+|     5s    16%    0.111/0.121    0.040/0.045    0.085/0.091    0.107/0.117
+|    10s    33%    0.248/0.259    0.105/0.110    0.153/0.158    0.224/0.233
+|    15s    50%    0.393/0.405    0.180/0.187    0.215/0.219    0.341/0.350
+|    20s    66%    0.544/0.556    0.264/0.271    0.272/0.276    0.457/0.467
+|    25s    83%    0.698/0.711    0.355/0.363    0.326/0.330    0.574/0.583
+|    30s   100%    0.856/0.869    0.452/0.460    0.378/0.382    0.691/0.700
+|
++-- Step 3 - Hold Phase (raw frozen at Spicy Cola, EMA converges) ---------+
+|      t   hold    Sourn e/r    Sweet e/r    Spici e/r    Carbo e/r
+|    31s     1s    0.867/0.869    0.459/0.460    0.381/0.382    0.699/0.700
+|    32s     2s    0.869/0.869    0.460/0.460    0.382/0.382    0.700/0.700
+|    33s     3s    0.869/0.869    0.460/0.460    0.382/0.382    0.700/0.700
+|    34s     4s    0.869/0.869    0.460/0.460    0.382/0.382    0.700/0.700
+|    35s     5s    0.869/0.869    0.460/0.460    0.382/0.382    0.700/0.700
+|    36s     6s    0.869/0.869    0.460/0.460    0.382/0.382    0.700/0.700
+|    37s     7s    0.869/0.869    0.460/0.460    0.382/0.382    0.700/0.700
+|    38s     8s    0.869/0.869    0.460/0.460    0.382/0.382    0.700/0.700
+|    39s     9s    0.869/0.869    0.460/0.460    0.382/0.382    0.700/0.700
+|    40s    10s    0.869/0.869    0.460/0.460    0.382/0.382    0.700/0.700
+|  ... (truncated - all dimensions stable)
+|
++-- Step 4 - Convergence Results ------------------------------------------+
+|
+|  Analytical (step function, instant switch):
+|    N = log(1-0.9) / log(1-0.2)
+|      = 10.32 frames  ->  ceil = 11 frames = 1.10s
+|    EMA per-frame lag on a ramp = (1-a)/a / fps = 0.40s
+|
+|  Observed (30s linear ramp of raw values):
+|  Dimension        Target  Thr 90%   Frame    Time  Result
+|  -------------- -------- -------- ------- -------  ----------------------------
+|  Sourness         0.8688   0.7819     277    27.7s  during ramp at  92% complete
+|  Sweetness        0.4597   0.4137     281    28.1s  during ramp at  93% complete
+|  Spiciness        0.3817   0.3435     267    26.7s  during ramp at  89% complete
+|  Carbonation      0.7000   0.6300     274    27.4s  during ramp at  91% complete
+|
+|  Key finding: for a slow 30s ramp, EMA lag = 0.40s (negligible).
+|  Dimensions reach 90% during the pour itself because the raw signal
+|  has already risen far enough to carry the smoothed value with it.
+|
++-- Step 5 - Step Function Detail (Spiciness, frame by frame) -------------+
+|  Instant switch from Water baseline. Shows why alpha=0.2 feels 'fluid'.
+|  Target: 0.3817   90% threshold: 0.3435
+|
+|   Frame   t(s)       EMA       Raw    % Tgt             bar (EMA)
+|  ------  -----  --------  --------  -------  --------------------
+|       1    0.1    0.0763    0.3817    20.0%  [####--------------]
+|       2    0.2    0.1374    0.3817    36.0%  [######------------]
+|       3    0.3    0.1863    0.3817    48.8%  [#########---------]
+|       4    0.4    0.2253    0.3817    59.0%  [###########-------]
+|       5    0.5    0.2566    0.3817    67.2%  [############------]
+|       6    0.6    0.2816    0.3817    73.8%  [#############-----]
+|       7    0.7    0.3016    0.3817    79.0%  [##############----]
+|       8    0.8    0.3176    0.3817    83.2%  [###############---]
+|       9    0.9    0.3304    0.3817    86.6%  [################--]
+|      10    1.0    0.3407    0.3817    89.3%  [################--]
+|      11    1.1    0.3489    0.3817    91.4%  [################--] <- 90%
+|      12    1.2    0.3554    0.3817    93.1%  [#################-]
+|      13    1.3    0.3607    0.3817    94.5%  [#################-]
+|      14    1.4    0.3649    0.3817    95.6%  [#################-]
+|      15    1.5    0.3682    0.3817    96.5%  [#################-]
+|      16    1.6    0.3709    0.3817    97.2%  [#################-]
+|      17    1.7    0.3731    0.3817    97.7%  [##################]
+|      18    1.8    0.3748    0.3817    98.2%  [##################]
+|      19    1.9    0.3762    0.3817    98.6%  [##################]
+|      20    2.0    0.3773    0.3817    98.8%  [##################]
+|
+|  Step 90% reached : frame 11 = 1.1s
+|  Analytical (real) : 10.32 frames = 1.032s
+|  Delta             : +0.068s (one frame of rounding)
+|
++-- Step 6 - Spiciness Perceived Intensity  (ramp + hold) -----------------+
+|   0.43 |                             |                            
+|        |                             |rXXXXXXXXXXXXXXXXXXXXXXXXXXX
+|        |                           XXXE                           
+|        |........................XXX...............................
+|   0.30 |                     XXX     |                            
+|        |                  XXX        |                            
+|        |               XXX           |                            
+|        |            rXX              |                            
+|   0.16 |          XXE                |                            
+|        |       rXX                   |                            
+|        |     XXE                     |                            
+|        |   XX                        |                            
+|   0.03 | XX                          |                            
+|        |X                            |                            
+|        +----------------------------------------------------------
+|        0s                          ^30s  57s
+|        r=Raw  E=EMA  .=90% thr  |=pour end
+|
++=========================================================================+
+|  SUMMARY                                                               |
+|  Alpha = 0.2  |  10 Hz  |  Per-frame lag = 0.40s  |  Step 90% = 11 frames = 1.10s|
+|                                                                        |
+|  RAMP  scenario: 90% reached ~27.7s into the 30s pour.                 |
+|          EMA introduces only 0.40s of lag - perceived transitions are very fluid.|
+|  STEP  scenario: any sudden change (e.g. adding hot sauce mid-sip) takes|
+|          exactly 11 frames (1.10s) to register at 90% in the output.   |
+|  TUNING: Increase alpha toward 1.0 to make the system more reactive;   |
+|          decrease toward 0.0 for slower, more cinematic transitions.   |
++=========================================================================+

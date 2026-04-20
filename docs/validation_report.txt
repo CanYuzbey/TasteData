@@ -1,0 +1,179 @@
++=================================================================+
+|  TASTEDATA VALIDATION BATTERY                                  |
+|  Generated : 2026-04-20 21:20:28                               |
+|  Threshold : intensity >= 0.60 marked with <                   |
++=================================================================+
+
++-- 1. Double Espresso --------------------------------------------+
+|  Note   : High bitterness, near-neutral pH, very hot
+|  Input  : pH=5.0  Temp=90C  Brix=1.0  SHU=0  CO2=0.0vol  IBU=80
+|
+|  Sourness      [------------------------] 0.0000  
+|  Sweetness     [------------------------] 0.0204  
+|  Spiciness     [------------------------] 0.0000  
+|  Saltiness     [------------------------] 0.0000  
+|  Umami         [------------------------] 0.0000  
+|  Carbonation   [------------------------] 0.0000  
+|  Bitterness    [##################------] 0.7482 <
+|  Temperature   [########################] 1.0000 <
+|
+|  Visual : RGB(255,182,193)  angularity=0.000  noise=0.000
+|
+|  Sonic Seasoning:
+|    robust, dense bass, A composition with robust, dense bass,
+|    featuring distorted trombone.
++-----------------------------------------------------------------+
+
++-- 2. Classic Cola -----------------------------------------------+
+|  Note   : High acidity, moderate sweetness, strong carbonation
+|  Input  : pH=2.8  Temp=4C  Brix=11.0  SHU=0  CO2=3.5vol  IBU=2
+|
+|  Sourness      [#####################---] 0.8688 <
+|  Sweetness     [###########-------------] 0.4597  
+|  Spiciness     [------------------------] 0.0000  
+|  Saltiness     [------------------------] 0.0000  
+|  Umami         [------------------------] 0.0000  
+|  Carbonation   [#################-------] 0.7000 <
+|  Bitterness    [------------------------] 0.0062  
+|  Temperature   [#-----------------------] 0.0500  
+|
+|  Visual : RGB(255,230, 67)  angularity=0.523  noise=0.210
+|
+|  Sonic Seasoning:
+|    [Sharp Transients], jagged, shattered transients, bright,
+|    tingling grain, A composition with jagged, shattered
+|    transients and bright, tingling grain, featuring staccato
+|    brass and crackling harmonics.
++-----------------------------------------------------------------+
+
++-- 3. Extreme Hot Sauce ------------------------------------------+
+|  Note   : Habanero-level SHU, mildly acidic, almost no sweetness
+|  Input  : pH=3.5  Temp=22C  Brix=3.0  SHU=40000  CO2=0.0vol  IBU=0
+|
+|  Sourness      [##############----------] 0.5701  
+|  Sweetness     [##----------------------] 0.0849  
+|  Spiciness     [####################----] 0.8365 <
+|  Saltiness     [------------------------] 0.0000  
+|  Umami         [------------------------] 0.0000  
+|  Carbonation   [------------------------] 0.0000  
+|  Bitterness    [------------------------] 0.0000  
+|  Temperature   [#######-----------------] 0.2750  
+|
+|  Visual : RGB(255,108, 11)  angularity=0.867  noise=0.586
+|
+|  Sonic Seasoning:
+|    [Fast Tempo], aggressive, dense energy, A composition with
+|    aggressive, dense energy, featuring industrial bit-crushed
+|    synth.
++-----------------------------------------------------------------+
+
++-- 4. Tonic Water ------------------------------------------------+
+|  Note   : Maximum sourness, quinine bitterness, high carbonation
+|  Input  : pH=2.5  Temp=4C  Brix=8.0  SHU=0  CO2=4.2vol  IBU=35
+|
+|  Sourness      [########################] 1.0000 <
+|  Sweetness     [#######-----------------] 0.3039  
+|  Spiciness     [------------------------] 0.0000  
+|  Saltiness     [------------------------] 0.0000  
+|  Umami         [------------------------] 0.0000  
+|  Carbonation   [####################----] 0.8400 <
+|  Bitterness    [######------------------] 0.2554  
+|  Temperature   [#-----------------------] 0.0500  
+|
+|  Visual : RGB(255,238, 45)  angularity=0.614  noise=0.252
+|
+|  Sonic Seasoning:
+|    [Sharp Transients], jagged, shattered transients, bright,
+|    tingling grain, A composition with jagged, shattered
+|    transients and bright, tingling grain, featuring staccato
+|    brass and crackling harmonics.
++-----------------------------------------------------------------+
+
++-- 5. Sparkling Bitter-Lemon -------------------------------------+
+|  Note   : Reference profile from development sessions
+|  Input  : pH=2.8  Temp=5C  Brix=8.0  SHU=0  CO2=4.0vol  IBU=40
+|
+|  Sourness      [#####################---] 0.8688 <
+|  Sweetness     [#######-----------------] 0.3039  
+|  Spiciness     [------------------------] 0.0000  
+|  Saltiness     [------------------------] 0.0000  
+|  Umami         [------------------------] 0.0000  
+|  Carbonation   [###################-----] 0.8000 <
+|  Bitterness    [#######-----------------] 0.3039  
+|  Temperature   [##----------------------] 0.0625  
+|
+|  Visual : RGB(255,236, 50)  angularity=0.593  noise=0.240
+|
+|  Sonic Seasoning:
+|    [Sharp Transients], jagged, shattered transients, bright,
+|    tingling grain, A composition with jagged, shattered
+|    transients and bright, tingling grain, featuring staccato
+|    brass and crackling harmonics.
++-----------------------------------------------------------------+
+
++-- 6. Miso Soup --------------------------------------------------+
+|  Note   : High glutamate umami, strong salt, near-neutral pH
+|  Input  : pH=4.9  Temp=68C  Brix=2.0  SHU=0  CO2=0.0vol  IBU=0
+|           Salt=8.5g/L  Umami=16.0gu
+|
+|  Sourness      [#-----------------------] 0.0290  
+|  Sweetness     [#-----------------------] 0.0501  
+|  Spiciness     [------------------------] 0.0000  
+|  Saltiness     [###################-----] 0.7965 <
+|  Umami         [###################-----] 0.8000 <
+|  Carbonation   [------------------------] 0.0000  
+|  Bitterness    [------------------------] 0.0000  
+|  Temperature   [####################----] 0.8500 <
+|
+|  Visual : RGB(255,209,122)  angularity=0.293  noise=0.000
+|
+|  Sonic Seasoning:
+|    [Low Frequency Dominant] [Bright Articulation], meaty, dark
+|    resonances, crystalline textures, A composition with meaty,
+|    dark resonances and crystalline textures, featuring deep
+|    bass sustain and staccato rhythms.
++-----------------------------------------------------------------+
+
++-- 7. Sea Water --------------------------------------------------+
+|  Note   : Extreme salt (clamped at range ceiling), minimal other dimensions
+|  Input  : pH=4.5  Temp=15C  Brix=0.0  SHU=0  CO2=0.0vol  IBU=0
+|           Salt=10.0g/L  Umami=2.0gu
+|
+|  Sourness      [####--------------------] 0.1703  
+|  Sweetness     [------------------------] 0.0000  
+|  Spiciness     [------------------------] 0.0000  
+|  Saltiness     [########################] 1.0000 <
+|  Umami         [##----------------------] 0.1000  
+|  Carbonation   [------------------------] 0.0000  
+|  Bitterness    [------------------------] 0.0000  
+|  Temperature   [#####-------------------] 0.1875  
+|
+|  Visual : RGB(255,255,  0)  angularity=0.800  noise=0.000
+|
+|  Sonic Seasoning:
+|    [Bright Articulation], crystalline textures, A composition
+|    with crystalline textures, featuring staccato rhythms.
++-----------------------------------------------------------------+
+
++-- 8. Double Espresso (Salted) -----------------------------------+
+|  Note   : Suppression validation: salt reduces perceived bitterness by 20%
+|  Input  : pH=5.0  Temp=90C  Brix=1.0  SHU=0  CO2=0.0vol  IBU=80
+|           Salt=5.0g/L  Umami=0.0gu
+|
+|  Sourness      [------------------------] 0.0000  
+|  Sweetness     [------------------------] 0.0204  
+|  Spiciness     [------------------------] 0.0000  
+|  Saltiness     [#########---------------] 0.3789  
+|  Umami         [------------------------] 0.0000  
+|  Carbonation   [------------------------] 0.0000  
+|  Bitterness    [##############----------] 0.5986  
+|  Temperature   [########################] 1.0000 <
+|
+|  Visual : RGB(255,182,193)  angularity=0.000  noise=0.000
+|
+|  Sonic Seasoning:
+|    [Ambient], neutral, soft, minimal
++-----------------------------------------------------------------+
+
+  8 profiles processed.
+  Settings loaded from: config/settings.yaml

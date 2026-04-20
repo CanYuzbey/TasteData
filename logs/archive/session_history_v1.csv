@@ -1,0 +1,2 @@
+timestamp,raw_ph,raw_temp,raw_brix,raw_spicy,raw_co2,raw_ibu,Sourness,Sweetness,Spiciness,Carbonation,Bitterness,Temperature,audio_prompt
+2026-04-20T13:50:30,2.8,5,8,0,4.0,40.0,0.8688,0.2535,0.0,0.8,0.2535,0.0625,"[Sharp Transients], jagged shattered transients, bright tingling grain, test prompt"

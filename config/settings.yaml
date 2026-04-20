@@ -1,0 +1,41 @@
+# TasteData Scientific Configuration
+# Edit these values to re-tune the algorithm without touching source code.
+
+normalization:
+  ph:        {min: 2.5,     max: 5.0}      # Note: Sourness uses (1 - normalized_pH)
+  temp:      {min: 0.0,     max: 80.0}     # degrees Celsius
+  brix:      {min: 0.0,     max: 20.0}     # degrees Brix (dissolved sugar %)
+  shu:       {min: 0.0,     max: 50000.0}  # Scoville Heat Units
+  co2:       {min: 0.0,     max: 5.0}      # volumes of dissolved CO2
+  ibu:       {min: 0.0,     max: 100.0}    # International Bitterness Units
+  salt:      {min: 0.0,     max: 10.0}     # g/L sodium chloride
+  glutamate: {min: 0.0,     max: 20.0}     # glutamate units (arbitrary sensor scale)
+
+exponents:
+  # Stevens's Power Law: Perception = Normalized_Value ^ Exponent
+  # Increase an exponent to make the perception "slower to saturate."
+  sweetness:  1.3
+  spiciness:  0.8
+  sourness:   1.1
+  bitterness: 1.3
+  saltiness:  1.4
+  umami:      1.0
+
+audio:
+  # Minimum perceived intensity (0.0-1.0) for a dimension to appear in the audio prompt.
+  threshold: 0.6
+
+smoothing:
+  # Exponential Moving Average alpha for inter-frame signal stability.
+  # 0.0 = completely frozen (ignores new data), 1.0 = no smoothing (raw passthrough).
+  alpha: 0.2
+
+interactions:
+  # Perceptual Suppression / Boost Rules — applied after Stevens's Law, before EMA.
+  # Based on cross-modal masking research (McBurney 1969, Breslin 1996).
+  salt_bitter_threshold:  0.30   # Saltiness above this level suppresses Bitterness
+  salt_bitter_reduction:  0.20   # Reduce Bitterness by this fraction
+  sweet_sour_threshold:   0.50   # Sweetness above this level suppresses Sourness
+  sweet_sour_reduction:   0.15   # Reduce Sourness by this fraction
+  heat_spicy_threshold:   0.70   # Temperature above this level boosts Spiciness
+  heat_spicy_boost:       0.10   # Increase Spiciness by this fraction (clamped to 1.0)

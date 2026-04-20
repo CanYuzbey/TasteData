@@ -1,0 +1,25 @@
+{
+  "label": "sparkling_bitter_lemon",
+  "timestamp": "2026-04-20T15:04:57",
+  "raw_data": {
+    "raw_ph": 2.8,
+    "raw_temp": 5,
+    "raw_brix": 8,
+    "raw_spicy": 0,
+    "raw_co2": 4.0,
+    "raw_ibu": 40.0,
+    "raw_salt": 0.0,
+    "raw_umami": 0.0
+  },
+  "intensities": {
+    "Sourness": 0.868822,
+    "Sweetness": 0.303863,
+    "Spiciness": 0.0,
+    "Saltiness": 0.0,
+    "Umami": 0.0,
+    "Carbonation": 0.8,
+    "Bitterness": 0.303863,
+    "Temperature": 0.0625
+  },
+  "audio_prompt": "[Sharp Transients], jagged, shattered transients, bright, tingling grain, A composition with jagged, shattered transients and bright, tingling grain, featuring staccato brass and crackling harmonics."
+}

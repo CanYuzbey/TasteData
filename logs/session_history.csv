@@ -1,0 +1,4 @@
+timestamp,raw_ph,raw_temp,raw_brix,raw_spicy,raw_co2,raw_ibu,Sourness,Sweetness,Spiciness,Carbonation,Bitterness,Temperature,audio_prompt
+2026-04-20T15:15:42,3.1986672745317763,19.806967635690807,12.091453591050813,475.2536670847446,0.0,0.0,0.697299,0.519856,0.024119,0.0,0.0,0.247587,"[Sharp Transients], jagged, shattered transients, A composition with jagged, shattered transients, featuring staccato brass."
+2026-04-20T15:15:42,3.1623827249787952,19.929468766215567,12.151412512478796,468.5629719248981,0.0,0.0,0.700393,0.520527,0.024065,0.0,0.0,0.247893,"[Sharp Transients], jagged, shattered transients, A composition with jagged, shattered transients, featuring staccato brass."
+2026-04-20T15:15:42,3.1846880040362846,20.26154220128618,12.255795263604181,452.0732924574629,0.0,0.0,0.700965,0.522233,0.023887,0.0,0.0,0.248969,"[Sharp Transients], jagged, shattered transients, A composition with jagged, shattered transients, featuring staccato brass."
