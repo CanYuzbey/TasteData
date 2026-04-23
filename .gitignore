@@ -1,0 +1,53 @@
+# --- Python Standard ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# --- Environments ---
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# --- IDEs / Editors ---
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# --- Claude Code ---
+.claude/
+
+# --- TasteData Specific ---
+# We ignore the raw data and logs, but keep the folders
+logs/*.csv
+snapshots/*.json
+
+# If you want to keep the archive folder structure but ignore content:
+logs/archive/*.csv
+
+# --- Documentation / Config ---
+# We keep these! (Do NOT ignore .yaml or .md files)

@@ -1,0 +1,259 @@
++====================================================================+
+|  TASTEDATA SYNTHETIC TEST SUITE                                    |
+|  21 test cases  |  tolerance = 1e-04                               |
++====================================================================+
++--------------------------------------------------------------------+
+|  [PASS] #01: Pure Sweetness                                        |
+|       Max brix, flat pH (neutral), room temp -- only Sweetness should saturate|
+|
+|    Sourness      got=0.000000  exp=0.000000  d=0.0e+00             |
+|    Sweetness     got=1.000000  exp=1.000000  d=0.0e+00             |
+|    Spiciness     got=0.000000  exp=0.000000  d=0.0e+00             |
+|    Saltiness     got=0.000000  exp=0.000000  d=0.0e+00             |
+|    Umami         got=0.000000  exp=0.000000  d=0.0e+00             |
+|    Carbonation   got=0.000000  exp=0.000000  d=0.0e+00             |
+|    Bitterness    got=0.000000  exp=0.000000  d=0.0e+00             |
+|    Temperature   got=0.250000  exp=0.250000  d=0.0e+00             |
++--------------------------------------------------------------------+
+|  [PASS] #02: Pure Sourness                                         |
+|       Minimum pH (2.5) -> max sourness inversion, zero everything else|
+|
+|    Sourness      got=1.000000  exp=1.000000  d=0.0e+00             |
+|    Sweetness     got=0.000000  exp=0.000000  d=0.0e+00             |
+|    Spiciness     got=0.000000  exp=0.000000  d=0.0e+00             |
+|    Saltiness     got=0.000000  exp=0.000000  d=0.0e+00             |
+|    Umami         got=0.000000  exp=0.000000  d=0.0e+00             |
+|    Carbonation   got=0.000000  exp=0.000000  d=0.0e+00             |
+|    Bitterness    got=0.000000  exp=0.000000  d=0.0e+00             |
+|    Temperature   got=0.250000  exp=0.250000  d=0.0e+00             |
++--------------------------------------------------------------------+
+|  [PASS] #03: Pure Bitterness                                       |
+|       Max IBU, neutral pH, no other dimensions                     |
+|
+|    Sourness      got=0.000000  exp=0.000000  d=0.0e+00             |
+|    Sweetness     got=0.000000  exp=0.000000  d=0.0e+00             |
+|    Spiciness     got=0.000000  exp=0.000000  d=0.0e+00             |
+|    Saltiness     got=0.000000  exp=0.000000  d=0.0e+00             |
+|    Umami         got=0.000000  exp=0.000000  d=0.0e+00             |
+|    Carbonation   got=0.000000  exp=0.000000  d=0.0e+00             |
+|    Bitterness    got=1.000000  exp=1.000000  d=0.0e+00             |
+|    Temperature   got=0.250000  exp=0.250000  d=0.0e+00             |
++--------------------------------------------------------------------+
+|  [PASS] #04: Pure Spiciness                                        |
+|       Max SHU, no heat, no other dimensions                        |
+|
+|    Sourness      got=0.000000  exp=0.000000  d=0.0e+00             |
+|    Sweetness     got=0.000000  exp=0.000000  d=0.0e+00             |
+|    Spiciness     got=1.000000  exp=1.000000  d=0.0e+00             |
+|    Saltiness     got=0.000000  exp=0.000000  d=0.0e+00             |
+|    Umami         got=0.000000  exp=0.000000  d=0.0e+00             |
+|    Carbonation   got=0.000000  exp=0.000000  d=0.0e+00             |
+|    Bitterness    got=0.000000  exp=0.000000  d=0.0e+00             |
+|    Temperature   got=0.250000  exp=0.250000  d=0.0e+00             |
++--------------------------------------------------------------------+
+|  [PASS] #05: Pure Saltiness                                        |
+|       Max salt, all else neutral                                   |
+|
+|    Sourness      got=0.000000  exp=0.000000  d=0.0e+00             |
+|    Sweetness     got=0.000000  exp=0.000000  d=0.0e+00             |
+|    Spiciness     got=0.000000  exp=0.000000  d=0.0e+00             |
+|    Saltiness     got=1.000000  exp=1.000000  d=0.0e+00             |
+|    Umami         got=0.000000  exp=0.000000  d=0.0e+00             |
+|    Carbonation   got=0.000000  exp=0.000000  d=0.0e+00             |
+|    Bitterness    got=0.000000  exp=0.000000  d=0.0e+00             |
+|    Temperature   got=0.250000  exp=0.250000  d=0.0e+00             |
++--------------------------------------------------------------------+
+|  [PASS] #06: Pure Umami                                            |
+|       Max glutamate, all else neutral                              |
+|
+|    Sourness      got=0.000000  exp=0.000000  d=0.0e+00             |
+|    Sweetness     got=0.000000  exp=0.000000  d=0.0e+00             |
+|    Spiciness     got=0.000000  exp=0.000000  d=0.0e+00             |
+|    Saltiness     got=0.000000  exp=0.000000  d=0.0e+00             |
+|    Umami         got=1.000000  exp=1.000000  d=0.0e+00             |
+|    Carbonation   got=0.000000  exp=0.000000  d=0.0e+00             |
+|    Bitterness    got=0.000000  exp=0.000000  d=0.0e+00             |
+|    Temperature   got=0.250000  exp=0.250000  d=0.0e+00             |
++--------------------------------------------------------------------+
+|  [PASS] #07: Pure Carbonation                                      |
+|       Max CO2, all else neutral                                    |
+|
+|    Sourness      got=0.000000  exp=0.000000  d=0.0e+00             |
+|    Sweetness     got=0.000000  exp=0.000000  d=0.0e+00             |
+|    Spiciness     got=0.000000  exp=0.000000  d=0.0e+00             |
+|    Saltiness     got=0.000000  exp=0.000000  d=0.0e+00             |
+|    Umami         got=0.000000  exp=0.000000  d=0.0e+00             |
+|    Carbonation   got=1.000000  exp=1.000000  d=0.0e+00             |
+|    Bitterness    got=0.000000  exp=0.000000  d=0.0e+00             |
+|    Temperature   got=0.250000  exp=0.250000  d=0.0e+00             |
++--------------------------------------------------------------------+
+|  [PASS] #08: Interaction: Salt suppresses Bitter                   |
+|       Salt=5g/L (norm=0.5 -> psi=0.3794 > 0.30) reduces IBU=80 bitterness by 20%|
+|
+|    Sourness      got=0.000000  exp=0.000000  d=0.0e+00             |
+|    Sweetness     got=0.000000  exp=0.000000  d=0.0e+00             |
+|    Spiciness     got=0.000000  exp=0.000000  d=0.0e+00             |
+|    Saltiness     got=0.378929  exp=0.378929  d=5.6e-17             |
+|    Umami         got=0.000000  exp=0.000000  d=0.0e+00             |
+|    Carbonation   got=0.000000  exp=0.000000  d=0.0e+00             |
+|    Bitterness    got=0.598559  exp=0.598559  d=0.0e+00             |
+|    Temperature   got=0.250000  exp=0.250000  d=0.0e+00             |
++--------------------------------------------------------------------+
+|  [PASS] #09: Interaction: Sweet suppresses Sour                    |
+|       Brix=12 (norm=0.6 -> psi=0.5150 > 0.50) reduces min-pH sourness by 15%|
+|
+|    Sourness      got=0.850000  exp=0.850000  d=1.1e-16             |
+|    Sweetness     got=0.514750  exp=0.514750  d=0.0e+00             |
+|    Spiciness     got=0.000000  exp=0.000000  d=0.0e+00             |
+|    Saltiness     got=0.000000  exp=0.000000  d=0.0e+00             |
+|    Umami         got=0.000000  exp=0.000000  d=0.0e+00             |
+|    Carbonation   got=0.000000  exp=0.000000  d=0.0e+00             |
+|    Bitterness    got=0.000000  exp=0.000000  d=0.0e+00             |
+|    Temperature   got=0.250000  exp=0.250000  d=0.0e+00             |
++--------------------------------------------------------------------+
+|  [PASS] #10: Interaction: Heat boosts Spicy                        |
+|       Temp=80C (norm=1.0 > 0.70) boosts SHU=10000 spiciness by 10% |
+|
+|    Sourness      got=0.000000  exp=0.000000  d=0.0e+00             |
+|    Sweetness     got=0.000000  exp=0.000000  d=0.0e+00             |
+|    Spiciness     got=0.303541  exp=0.303541  d=0.0e+00             |
+|    Saltiness     got=0.000000  exp=0.000000  d=0.0e+00             |
+|    Umami         got=0.000000  exp=0.000000  d=0.0e+00             |
+|    Carbonation   got=0.000000  exp=0.000000  d=0.0e+00             |
+|    Bitterness    got=0.000000  exp=0.000000  d=0.0e+00             |
+|    Temperature   got=1.000000  exp=1.000000  d=0.0e+00             |
++--------------------------------------------------------------------+
+|  [PASS] #11: Interaction: Salt threshold not met (no suppression)  |
+|       Salt=2g/L (norm=0.2 -> psi~=0.1742 < 0.30): bitterness unchanged|
+|
+|    Sourness      got=0.000000  exp=0.000000  d=0.0e+00             |
+|    Sweetness     got=0.000000  exp=0.000000  d=0.0e+00             |
+|    Spiciness     got=0.000000  exp=0.000000  d=0.0e+00             |
+|    Saltiness     got=0.105061  exp=0.105061  d=0.0e+00             |
+|    Umami         got=0.000000  exp=0.000000  d=0.0e+00             |
+|    Carbonation   got=0.000000  exp=0.000000  d=0.0e+00             |
+|    Bitterness    got=0.748199  exp=0.748199  d=1.1e-16             |
+|    Temperature   got=0.250000  exp=0.250000  d=0.0e+00             |
++--------------------------------------------------------------------+
+|  [PASS] #12: Interaction: Sweet threshold not met (no sourness suppression)|
+|       Brix=8 (norm=0.4 -> psi~=0.3281 < 0.50): sourness unchanged  |
+|
+|    Sourness      got=1.000000  exp=1.000000  d=0.0e+00             |
+|    Sweetness     got=0.303863  exp=0.303863  d=0.0e+00             |
+|    Spiciness     got=0.000000  exp=0.000000  d=0.0e+00             |
+|    Saltiness     got=0.000000  exp=0.000000  d=0.0e+00             |
+|    Umami         got=0.000000  exp=0.000000  d=0.0e+00             |
+|    Carbonation   got=0.000000  exp=0.000000  d=0.0e+00             |
+|    Bitterness    got=0.000000  exp=0.000000  d=0.0e+00             |
+|    Temperature   got=0.250000  exp=0.250000  d=0.0e+00             |
++--------------------------------------------------------------------+
+|  [PASS] #13: Interaction: All three fire simultaneously            |
+|       Max everything: salt>0.3 + sweet>0.5 + temp>0.7 all apply    |
+|
+|    Sourness      got=0.850000  exp=0.850000  d=1.1e-16             |
+|    Sweetness     got=1.000000  exp=1.000000  d=0.0e+00             |
+|    Spiciness     got=1.000000  exp=1.000000  d=0.0e+00             |
+|    Saltiness     got=1.000000  exp=1.000000  d=0.0e+00             |
+|    Umami         got=1.000000  exp=1.000000  d=0.0e+00             |
+|    Carbonation   got=1.000000  exp=1.000000  d=0.0e+00             |
+|    Bitterness    got=0.800000  exp=0.800000  d=1.1e-16             |
+|    Temperature   got=1.000000  exp=1.000000  d=0.0e+00             |
++--------------------------------------------------------------------+
+|  [PASS] #14: Classic Cola                                          |
+|       High acid, moderate sugar, strong carbonation, trace bitterness|
+|
+|    Sourness      got=0.868822  exp=0.868822  d=0.0e+00             |
+|    Sweetness     got=0.459697  exp=0.459697  d=5.6e-17             |
+|    Spiciness     got=0.000000  exp=0.000000  d=0.0e+00             |
+|    Saltiness     got=0.000000  exp=0.000000  d=0.0e+00             |
+|    Umami         got=0.000000  exp=0.000000  d=0.0e+00             |
+|    Carbonation   got=0.675473  exp=0.675473  d=0.0e+00             |
+|    Bitterness    got=0.006185  exp=0.006185  d=8.7e-19             |
+|    Temperature   got=0.050000  exp=0.050000  d=6.9e-18             |
++--------------------------------------------------------------------+
+|  [PASS] #15: Double Espresso                                       |
+|       High IBU bitterness, very hot, trace sweetness (Brix=1), neutral sourness|
+|
+|    Sourness      got=0.000000  exp=0.000000  d=0.0e+00             |
+|    Sweetness     got=0.020355  exp=0.020355  d=0.0e+00             |
+|    Spiciness     got=0.000000  exp=0.000000  d=0.0e+00             |
+|    Saltiness     got=0.000000  exp=0.000000  d=0.0e+00             |
+|    Umami         got=0.000000  exp=0.000000  d=0.0e+00             |
+|    Carbonation   got=0.000000  exp=0.000000  d=0.0e+00             |
+|    Bitterness    got=0.748199  exp=0.748199  d=1.1e-16             |
+|    Temperature   got=1.000000  exp=1.000000  d=0.0e+00             |
++--------------------------------------------------------------------+
+|  [PASS] #16: Miso Soup                                             |
+|       High umami + salt, warm temperature, near-neutral pH         |
+|
+|    Sourness      got=0.028991  exp=0.028991  d=3.5e-18             |
+|    Sweetness     got=0.050119  exp=0.050119  d=0.0e+00             |
+|    Spiciness     got=0.000000  exp=0.000000  d=0.0e+00             |
+|    Saltiness     got=0.796501  exp=0.796501  d=0.0e+00             |
+|    Umami         got=0.800000  exp=0.800000  d=1.1e-16             |
+|    Carbonation   got=0.000000  exp=0.000000  d=0.0e+00             |
+|    Bitterness    got=0.000000  exp=0.000000  d=0.0e+00             |
+|    Temperature   got=0.850000  exp=0.850000  d=1.1e-16             |
++--------------------------------------------------------------------+
+|  [PASS] #17: Double Espresso (Salted)                              |
+|       Demonstrates salt-bitter suppression on a real drink profile |
+|
+|    Sourness      got=0.000000  exp=0.000000  d=0.0e+00             |
+|    Sweetness     got=0.020355  exp=0.020355  d=0.0e+00             |
+|    Spiciness     got=0.000000  exp=0.000000  d=0.0e+00             |
+|    Saltiness     got=0.378929  exp=0.378929  d=5.6e-17             |
+|    Umami         got=0.000000  exp=0.000000  d=0.0e+00             |
+|    Carbonation   got=0.000000  exp=0.000000  d=0.0e+00             |
+|    Bitterness    got=0.598559  exp=0.598559  d=0.0e+00             |
+|    Temperature   got=1.000000  exp=1.000000  d=0.0e+00             |
++--------------------------------------------------------------------+
+|  [PASS] #18: All-zero inputs                                       |
+|       Plain neutral water: pH=5.0 (no sourness), everything else zero|
+|
+|    Sourness      got=0.000000  exp=0.000000  d=0.0e+00             |
+|    Sweetness     got=0.000000  exp=0.000000  d=0.0e+00             |
+|    Spiciness     got=0.000000  exp=0.000000  d=0.0e+00             |
+|    Saltiness     got=0.000000  exp=0.000000  d=0.0e+00             |
+|    Umami         got=0.000000  exp=0.000000  d=0.0e+00             |
+|    Carbonation   got=0.000000  exp=0.000000  d=0.0e+00             |
+|    Bitterness    got=0.000000  exp=0.000000  d=0.0e+00             |
+|    Temperature   got=0.000000  exp=0.000000  d=0.0e+00             |
++--------------------------------------------------------------------+
+|  [PASS] #19: Out-of-range temp (clamped at 1.0)                    |
+|       raw_temp=90 exceeds TEMP_MAX=80; norm=1.125 clamped to 1.0   |
+|
+|    Sourness      got=0.000000  exp=0.000000  d=0.0e+00             |
+|    Sweetness     got=0.000000  exp=0.000000  d=0.0e+00             |
+|    Spiciness     got=0.000000  exp=0.000000  d=0.0e+00             |
+|    Saltiness     got=0.000000  exp=0.000000  d=0.0e+00             |
+|    Umami         got=0.000000  exp=0.000000  d=0.0e+00             |
+|    Carbonation   got=0.000000  exp=0.000000  d=0.0e+00             |
+|    Bitterness    got=0.000000  exp=0.000000  d=0.0e+00             |
+|    Temperature   got=1.000000  exp=1.000000  d=0.0e+00             |
++--------------------------------------------------------------------+
+|  [PASS] #20: Mid-range all dimensions                              |
+|       0.5 normalized across every input -- tests power-law curves at the inflection zone|
+|
+|    Sourness      got=0.466516  exp=0.466516  d=0.0e+00             |
+|    Sweetness     got=0.406126  exp=0.406126  d=5.6e-17             |
+|    Spiciness     got=0.574349  exp=0.574349  d=0.0e+00             |
+|    Saltiness     got=0.378929  exp=0.378929  d=5.6e-17             |
+|    Umami         got=0.500000  exp=0.500000  d=0.0e+00             |
+|    Carbonation   got=0.466516  exp=0.466516  d=0.0e+00             |
+|    Bitterness    got=0.324901  exp=0.324901  d=0.0e+00             |
+|    Temperature   got=0.500000  exp=0.500000  d=0.0e+00             |
++--------------------------------------------------------------------+
+|  [PASS] #21: EMA first-frame identity                              |
+|       After reset_ema(), first frame output equals computed values (no smoothing lag)|
+|
+|    Sourness      got=0.782346  exp=0.782346  d=1.1e-16             |
+|    Sweetness     got=0.164938  exp=0.164938  d=2.8e-17             |
+|    Spiciness     got=0.158489  exp=0.158489  d=0.0e+00             |
+|    Saltiness     got=0.185340  exp=0.185340  d=2.8e-17             |
+|    Umami         got=0.200000  exp=0.200000  d=2.8e-17             |
+|    Carbonation   got=0.265970  exp=0.265970  d=0.0e+00             |
+|    Bitterness    got=0.123407  exp=0.123407  d=0.0e+00             |
+|    Temperature   got=0.375000  exp=0.375000  d=5.6e-17             |
++====================================================================+
+|  Results: 21 passed  0 failed  (21 total)                          |
++====================================================================+
