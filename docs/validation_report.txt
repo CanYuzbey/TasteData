@@ -1,6 +1,6 @@
 +=================================================================+
 |  TASTEDATA VALIDATION BATTERY                                  |
-|  Generated : 2026-04-20 21:20:28                               |
+|  Generated : 2026-04-23 21:40:20                               |
 |  Threshold : intensity >= 0.60 marked with <                   |
 +=================================================================+
 
@@ -33,11 +33,11 @@
 |  Spiciness     [------------------------] 0.0000  
 |  Saltiness     [------------------------] 0.0000  
 |  Umami         [------------------------] 0.0000  
-|  Carbonation   [#################-------] 0.7000 <
+|  Carbonation   [################--------] 0.6755 <
 |  Bitterness    [------------------------] 0.0062  
 |  Temperature   [#-----------------------] 0.0500  
 |
-|  Visual : RGB(255,230, 67)  angularity=0.523  noise=0.210
+|  Visual : RGB(255,230, 67)  angularity=0.523  noise=0.203
 |
 |  Sonic Seasoning:
 |    [Sharp Transients], jagged, shattered transients, bright,
@@ -76,11 +76,11 @@
 |  Spiciness     [------------------------] 0.0000  
 |  Saltiness     [------------------------] 0.0000  
 |  Umami         [------------------------] 0.0000  
-|  Carbonation   [####################----] 0.8400 <
+|  Carbonation   [####################----] 0.8255 <
 |  Bitterness    [######------------------] 0.2554  
 |  Temperature   [#-----------------------] 0.0500  
 |
-|  Visual : RGB(255,238, 45)  angularity=0.614  noise=0.252
+|  Visual : RGB(255,238, 45)  angularity=0.614  noise=0.248
 |
 |  Sonic Seasoning:
 |    [Sharp Transients], jagged, shattered transients, bright,
@@ -98,11 +98,11 @@
 |  Spiciness     [------------------------] 0.0000  
 |  Saltiness     [------------------------] 0.0000  
 |  Umami         [------------------------] 0.0000  
-|  Carbonation   [###################-----] 0.8000 <
+|  Carbonation   [###################-----] 0.7823 <
 |  Bitterness    [#######-----------------] 0.3039  
 |  Temperature   [##----------------------] 0.0625  
 |
-|  Visual : RGB(255,236, 50)  angularity=0.593  noise=0.240
+|  Visual : RGB(255,236, 50)  angularity=0.593  noise=0.235
 |
 |  Sonic Seasoning:
 |    [Sharp Transients], jagged, shattered transients, bright,

@@ -14,12 +14,16 @@ normalization:
 exponents:
   # Stevens's Power Law: Perception = Normalized_Value ^ Exponent
   # Increase an exponent to make the perception "slower to saturate."
-  sweetness:  1.3
-  spiciness:  0.8
-  sourness:   1.1
-  bitterness: 1.3
-  saltiness:  1.4
-  umami:      1.0
+  sweetness:   1.3
+  spiciness:   0.8
+  sourness:    1.1
+  bitterness:  1.3
+  saltiness:   1.4
+  umami:       1.0
+  # n=1.1 (slightly compressive): more CO2 is required to reach a given
+  # perceived intensity than a linear mapping would predict; the prickling
+  # sensation builds gradually with concentration.  (Green 1992; Chandrashekar 2009)
+  carbonation: 1.1
 
 audio:
   # Minimum perceived intensity (0.0-1.0) for a dimension to appear in the audio prompt.

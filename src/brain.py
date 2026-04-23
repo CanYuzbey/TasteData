@@ -54,12 +54,13 @@ class TasteMapper:
         self.GLUTAMATE_MIN, self.GLUTAMATE_MAX = n["glutamate"]["min"], n["glutamate"]["max"]
 
         e = cfg["exponents"]
-        self.EXPONENT_SWEETNESS  = e["sweetness"]
-        self.EXPONENT_SPICINESS  = e["spiciness"]
-        self.EXPONENT_SOURNESS   = e["sourness"]
-        self.EXPONENT_BITTERNESS = e["bitterness"]
-        self.EXPONENT_SALTINESS  = e["saltiness"]
-        self.EXPONENT_UMAMI      = e["umami"]
+        self.EXPONENT_SWEETNESS   = e["sweetness"]
+        self.EXPONENT_SPICINESS   = e["spiciness"]
+        self.EXPONENT_SOURNESS    = e["sourness"]
+        self.EXPONENT_BITTERNESS  = e["bitterness"]
+        self.EXPONENT_SALTINESS   = e["saltiness"]
+        self.EXPONENT_UMAMI       = e["umami"]
+        self.EXPONENT_CARBONATION = e["carbonation"]
 
         self._AUDIO_THRESHOLD = cfg["audio"]["threshold"]
         self.EMA_ALPHA        = cfg["smoothing"]["alpha"]
@@ -127,7 +128,7 @@ class TasteMapper:
             "Spiciness":   self._apply_power_law(norm_spicy,      self.EXPONENT_SPICINESS),
             "Saltiness":   self._apply_power_law(norm_salt,       self.EXPONENT_SALTINESS),
             "Umami":       self._apply_power_law(norm_glutamate,  self.EXPONENT_UMAMI),
-            "Carbonation": clamp(norm_co2),
+            "Carbonation": self._apply_power_law(norm_co2, self.EXPONENT_CARBONATION),
             "Bitterness":  self._apply_power_law(norm_ibu,        self.EXPONENT_BITTERNESS),
             "Temperature": clamp(norm_temp),
         }
@@ -197,10 +198,23 @@ class TasteMapper:
         prefix = f"{tags}, " if tags else ""
         return f"{prefix}{', '.join(textures)}, {fusion}"
 
-    def save_flavor_snapshot(self, label: str, data: dict) -> Path:
-        """Process raw sensor data and persist the full taste frame as a JSON snapshot."""
-        intensities  = self.process_data(**data)
-        audio_prompt = self.generate_audio_prompt(intensities)
+    def save_flavor_snapshot(
+        self,
+        label:        str,
+        data:         dict,
+        intensities:  dict | None = None,
+        audio_prompt: str  | None = None,
+    ) -> Path:
+        """Persist a taste frame as a JSON snapshot.
+
+        If intensities are not supplied, process_data() is called (with EMA).
+        If audio_prompt is not supplied, falls back to generate_audio_prompt().
+        Passing both avoids a second EMA call when the caller already has the frame.
+        """
+        if intensities is None:
+            intensities = self.process_data(**data)
+        if audio_prompt is None:
+            audio_prompt = self.generate_audio_prompt(intensities)
 
         _SNAPSHOTS_DIR.mkdir(exist_ok=True)
         safe_name = label.lower().replace(" ", "_").replace("/", "-")

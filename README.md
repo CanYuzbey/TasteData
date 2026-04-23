@@ -301,8 +301,8 @@ tasteData/
 +-- snapshots/
 |                             Per-label JSON files saved on demand during a live
 |                             session (CLI 'S' key). Each file captures: raw sensor
-|                             values, all 8 perceived intensities, and the full
-|                             audio prompt at the moment of capture.
+|                             values, all 8 perceived intensities, and the
+|                             PromptBundle.master_prompt at the moment of capture.
 |
 +-- src/
 |   +-- brain.py              TasteMapper — the core scientific engine. Implements
@@ -319,7 +319,9 @@ tasteData/
 |                             to every channel's timbre, articulation, and FX chain.
 |   +-- sensors.py            SensorReader — serial device abstraction with automatic
 |                             hardware/simulation fallback.
-|   +-- bridge.py             OSC client — transmits all outputs to TouchDesigner.
+|   +-- bridge.py             OSC client — processes all 8 sensor fields via
+|                             TasteMapper, calls generate_bundle() for the master
+|                             prompt, and transmits visual params + prompt over OSC.
 |   +-- logger.py             SessionLogger — CSV append writer with per-frame flush.
 |   +-- analyzer.py           Snapshot Library Analyzer — reads snapshots/ and
 |                             generates a Digital Menu table and Global Flavor Profile.

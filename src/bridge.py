@@ -28,6 +28,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from pythonosc import udp_client
 
 from src.brain import TasteMapper
+from src.prompt_engine import generate_bundle
 
 OSC_HOST = "127.0.0.1"
 OSC_PORT = 7000
@@ -61,21 +62,26 @@ def send_to_touchdesigner(raw_data: dict) -> None:
         raw_temp=raw_data["temp"],
         raw_brix=raw_data["brix"],
         raw_spicy=raw_data["spicy"],
+        raw_co2=raw_data.get("co2",   0.0),
+        raw_ibu=raw_data.get("ibu",   0.0),
+        raw_salt=raw_data.get("salt",  0.0),
+        raw_umami=raw_data.get("umami", 0.0),
     )
-
     visual = _mapper.get_visual_params(intensities)
-    audio_prompt = _mapper.generate_audio_prompt(intensities)
-    send_osc_data(visual, audio_prompt)
+    bundle = generate_bundle(intensities)
+    send_osc_data(visual, bundle.master_prompt)
 
 
 if __name__ == "__main__":
     print(f"Sending OSC to {OSC_HOST}:{OSC_PORT} — Ctrl+C to stop.\n")
 
-    # Baseline reading: slightly sour-sweet liquid (e.g., a citrus drink)
-    BASE = {"ph": 3.2, "temp": 20.0, "brix": 12.0, "spicy": 500.0}
+    # Baseline reading: slightly sour-sweet sparkling citrus drink
+    BASE  = {"ph": 3.2, "temp": 20.0, "brix": 12.0, "spicy": 500.0,
+             "co2": 3.0, "ibu": 5.0, "salt": 0.5, "umami": 0.0}
 
     # Simulated sensor noise ranges (±delta around the baseline)
-    NOISE = {"ph": 0.15, "temp": 2.0, "brix": 1.0, "spicy": 200.0}
+    NOISE = {"ph": 0.15, "temp": 2.0, "brix": 1.0, "spicy": 200.0,
+             "co2": 0.2, "ibu": 1.0, "salt": 0.1, "umami": 0.0}
 
     try:
         while True:

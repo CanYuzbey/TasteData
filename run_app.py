@@ -20,6 +20,7 @@ from src.sensors import SensorReader
 from src.brain import TasteMapper
 from src.bridge import send_osc_data
 from src.logger import SessionLogger
+from src.prompt_engine import generate_bundle
 
 POLL_INTERVAL_SEC = 0.1  # 10 Hz — matches the Arduino delay(100)
 
@@ -59,7 +60,9 @@ def main() -> None:
     cli = threading.Thread(target=_cli_thread, args=(cmd_queue, stop_event), daemon=True)
     cli.start()
 
-    last_raw: dict = {}
+    last_raw:         dict  = {}
+    last_intensities: dict  = {}
+    last_bundle             = None   # PromptBundle from most recent frame
 
     try:
         while True:
@@ -73,7 +76,6 @@ def main() -> None:
                     if not last_raw:
                         print("  [Snapshot] No frame received yet — try again in a moment.")
                     else:
-                        # Convert sensor-key frame to process_data keyword args
                         snapshot_data = {
                             "raw_ph":    last_raw["ph"],
                             "raw_temp":  last_raw["temp"],
@@ -84,7 +86,13 @@ def main() -> None:
                             "raw_salt":  last_raw.get("salt",  0.0),
                             "raw_umami": last_raw.get("umami", 0.0),
                         }
-                        path = mapper.save_flavor_snapshot(arg, snapshot_data)
+                        # Pass the already-computed intensities and master prompt
+                        # to avoid a second process_data() call (which re-applies EMA).
+                        path = mapper.save_flavor_snapshot(
+                            arg, snapshot_data,
+                            intensities=last_intensities,
+                            audio_prompt=last_bundle.master_prompt if last_bundle else None,
+                        )
                         print(f"\n  [Snapshot] '{arg}' saved -> {path.name}\n")
             except queue.Empty:
                 pass
@@ -98,20 +106,23 @@ def main() -> None:
 
             last_raw = frame
 
-            intensities = mapper.process_data(
+            intensities  = mapper.process_data(
                 raw_ph=frame["ph"],
                 raw_temp=frame["temp"],
                 raw_brix=frame["brix"],
                 raw_spicy=frame["spicy"],
-                raw_co2=frame.get("co2", 0.0),
-                raw_ibu=frame.get("ibu", 0.0),
-                raw_salt=frame.get("salt", 0.0),
+                raw_co2=frame.get("co2",   0.0),
+                raw_ibu=frame.get("ibu",   0.0),
+                raw_salt=frame.get("salt",  0.0),
                 raw_umami=frame.get("umami", 0.0),
             )
+            bundle           = generate_bundle(intensities)
+            last_intensities = intensities
+            last_bundle      = bundle
+
             visual = mapper.get_visual_params(intensities)
-            audio_prompt = mapper.generate_audio_prompt(intensities)
-            send_osc_data(visual, audio_prompt)
-            logger.log_frame(frame, intensities, audio_prompt)
+            send_osc_data(visual, bundle.master_prompt)
+            logger.log_frame(frame, intensities, bundle.master_prompt)
             # ------------------------------------------------------------
 
             time.sleep(POLL_INTERVAL_SEC)
